@@ -1321,6 +1321,19 @@ RUN if [ ${INSTALL_GIT_PROMPT} = true ]; then \
 RUN set -xe; php -v | head -n 1 | grep -q "PHP ${LARADOCK_PHP_VERSION}."
 
 ###########################################################################
+# n98 Magerun
+###########################################################################
+
+USER root
+
+RUN \
+    curl -sS -O https://files.magerun.net/n98-magerun2.phar &&  \
+    curl -sS -o n98-magerun2.phar.sha256 https://files.magerun.net/sha256.php?file=n98-magerun2.phar && \
+    shasum -a 256 -c n98-magerun2.phar.sha256 && \
+    chmod +x ./n98-magerun2.phar && \
+    mv n98-magerun2.phar /usr/local/bin/magerun
+
+###########################################################################
 # Oh My ZSH!
 ###########################################################################
 
