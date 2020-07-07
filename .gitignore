@@ -12,6 +12,8 @@
 /nginx/ssl/*.key
 /nginx/ssl/*.csr
 
+/workspace/auth.json
+
 /.devcontainer/*
 !/.devcontainer/devcontainer.example.json
 !/.devcontainer/docker-compose.extend-example.yml
